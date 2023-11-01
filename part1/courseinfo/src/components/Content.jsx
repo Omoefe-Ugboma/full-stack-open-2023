@@ -10,8 +10,8 @@ const Content = ({part1,part2,part3}) => {
   };
   */
  
-
-  const Content = (props) => {
+// // 1.4 Course Information, Step 4
+ /* const Content = (props) => {
     const { parts } = props;
   
     return (
@@ -23,5 +23,20 @@ const Content = ({part1,part2,part3}) => {
         ))}
       </div>
     );
-  };
+  };*/
+// 1.5 Course Information, Step 5
+
+
+const Content = (props) => {
+	const lists = props.course.parts.map(function(item, index) {
+		return (
+			<div key={index}>
+				<p>{item.name}: {item.exercises}</p>
+			</div>
+		)
+	})
+	
+	return lists
+};
+
 export default Content;
