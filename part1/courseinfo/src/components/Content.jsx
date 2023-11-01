@@ -1,4 +1,4 @@
-import Part from "./Part"
+/*import Part from "./Part"
 const Content = ({part1,part2,part3}) => {
     return (
       <div>
@@ -8,5 +8,20 @@ const Content = ({part1,part2,part3}) => {
     </div>
     );
   };
+  */
+ 
+
+  const Content = (props) => {
+    const { parts } = props;
   
-  export default Content;
+    return (
+      <div>
+        {parts.map((item, index) => (
+          <div key={index}>
+            <p>{item.name}: {item.exercises}</p>
+          </div>
+        ))}
+      </div>
+    );
+  };
+export default Content;
